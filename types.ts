@@ -13,9 +13,16 @@ export interface ChatMessage {
   text: string;
 }
 
+export interface Question {
+  text: string;
+  options: string[];
+}
+
 export enum AppState {
   SERVICE_SELECTION,
   CHAT,
   BOOKING,
   SNAKE_GAME,
+  BUSINESS_PLAN,
+  VOICE_AGENT,
 }

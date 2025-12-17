@@ -3,7 +3,9 @@ import React, { useState, useCallback } from 'react';
 import { ServiceSelection } from './components/ServiceSelection';
 import { Chatbot } from './components/Chatbot';
 import { SnakeGame } from './components/SnakeGame';
-import type { Service, ChatMessage } from './types';
+import { BusinessPlanner } from './components/BusinessPlanner';
+import { VoiceAgent } from './components/VoiceAgent';
+import type { Service, ChatMessage, Question } from './types';
 import { AppState } from './types';
 import { QUESTIONS } from './constants';
 import { generateSummary } from './services/geminiService';
@@ -22,8 +24,18 @@ function App() {
       setAppState(AppState.SNAKE_GAME);
       return;
     }
+    
+    if (service.id === 'business_plan') {
+      setAppState(AppState.BUSINESS_PLAN);
+      return;
+    }
+    
+    if (service.id === 'voice_agent') {
+        setAppState(AppState.VOICE_AGENT);
+        return;
+    }
 
-    const firstQuestion = QUESTIONS[service.id]?.[0];
+    const firstQuestion = QUESTIONS[service.id]?.[0]?.text;
     if (firstQuestion) {
       setChatHistory([
         { sender: 'bot', text: `Great! Let's get started with ${service.name}. I have a few questions to understand your needs.` },
@@ -49,7 +61,7 @@ function App() {
 
     if (nextQuestionIndex < serviceQuestions.length) {
       setCurrentQuestionIndex(nextQuestionIndex);
-      setChatHistory(prev => [...prev, { sender: 'bot', text: serviceQuestions[nextQuestionIndex] }]);
+      setChatHistory(prev => [...prev, { sender: 'bot', text: serviceQuestions[nextQuestionIndex].text }]);
     } else {
       setIsLoading(true);
       setAppState(AppState.BOOKING); // Change state to prevent user input while summarizing
@@ -80,9 +92,14 @@ function App() {
         return <ServiceSelection onSelect={handleServiceSelect} />;
       case AppState.SNAKE_GAME:
         return <SnakeGame onRestart={handleRestart} />;
+      case AppState.BUSINESS_PLAN:
+        return <BusinessPlanner onRestart={handleRestart} />;
+      case AppState.VOICE_AGENT:
+          return <VoiceAgent onRestart={handleRestart} />;
       case AppState.CHAT:
       case AppState.BOOKING:
         if (selectedService) {
+          const currentQuestion = QUESTIONS[selectedService.id]?.[currentQuestionIndex];
           return <Chatbot 
                     service={selectedService}
                     chatHistory={chatHistory}
@@ -90,6 +107,7 @@ function App() {
                     isLoading={isLoading}
                     appState={appState}
                     onRestart={handleRestart}
+                    currentQuestion={currentQuestion}
                  />;
         }
         // Fallback to service selection if service is null

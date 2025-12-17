@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { BrandLogo } from '../constants';
 
 // --- Game Constants ---
 const BOARD_SIZE = 20;
@@ -17,7 +18,7 @@ type Direction = keyof typeof DIRECTIONS;
 type Position = { x: number; y: number };
 
 // --- Helper Functions ---
-const getRandomPosition = (snake: Position[] = []): Position => {
+const getRandomPosition = (snake: Position[]): Position => {
   let newPos: Position;
   do {
     newPos = {
@@ -36,12 +37,10 @@ export const SnakeGame: React.FC<{ onRestart: () => void }> = ({ onRestart }) =>
   const [isGameOver, setIsGameOver] = useState<boolean>(false);
   const [score, setScore] = useState<number>(0);
 
-  const gameLoopRef = useRef<NodeJS.Timeout>();
+  const gameLoopRef = useRef<number | null>(null);
 
   const resetGame = useCallback(() => {
     setSnake(INITIAL_SNAKE_POSITION);
-    // FIX: Pass the initial snake position to getRandomPosition.
-    // The function was called with 0 arguments, but it expects 1 to avoid placing food on the snake.
     setFood(getRandomPosition(INITIAL_SNAKE_POSITION));
     setDirection(DIRECTIONS.ArrowRight);
     setIsGameOver(false);
@@ -51,7 +50,6 @@ export const SnakeGame: React.FC<{ onRestart: () => void }> = ({ onRestart }) =>
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
     const newDirection = DIRECTIONS[e.key as Direction];
     if (newDirection) {
-      // Prevent snake from reversing on itself
       if (
         (newDirection.x !== 0 && newDirection.x === -direction.x) ||
         (newDirection.y !== 0 && newDirection.y === -direction.y)
@@ -77,13 +75,11 @@ export const SnakeGame: React.FC<{ onRestart: () => void }> = ({ onRestart }) =>
     head.x += direction.x;
     head.y += direction.y;
 
-    // Wall collision
     if (head.x < 0 || head.x >= BOARD_SIZE || head.y < 0 || head.y >= BOARD_SIZE) {
       setIsGameOver(true);
       return;
     }
 
-    // Self collision
     for (let i = 1; i < newSnake.length; i++) {
       if (head.x === newSnake[i].x && head.y === newSnake[i].y) {
         setIsGameOver(true);
@@ -93,7 +89,6 @@ export const SnakeGame: React.FC<{ onRestart: () => void }> = ({ onRestart }) =>
     
     newSnake.unshift(head);
 
-    // Food collision
     if (head.x === food.x && head.y === food.y) {
       setScore(s => s + 10);
       setFood(getRandomPosition(newSnake));
@@ -107,7 +102,7 @@ export const SnakeGame: React.FC<{ onRestart: () => void }> = ({ onRestart }) =>
 
   useEffect(() => {
     if (!isGameOver) {
-        gameLoopRef.current = setInterval(gameTick, GAME_SPEED_MS);
+        gameLoopRef.current = window.setInterval(gameTick, GAME_SPEED_MS);
     } else if (gameLoopRef.current) {
         clearInterval(gameLoopRef.current);
     }
@@ -121,9 +116,12 @@ export const SnakeGame: React.FC<{ onRestart: () => void }> = ({ onRestart }) =>
     <div className="min-h-screen w-full flex items-center justify-center bg-gray-900 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:32px_32px] p-4">
       <div className="w-full max-w-2xl bg-gray-800/80 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-700 flex flex-col items-center p-6">
         <header className="w-full flex justify-between items-center mb-4">
-           <div>
-              <h2 className="text-lg font-bold text-white">Highshift Arcade</h2>
-              <p className="text-sm text-indigo-400">Score: {score}</p>
+           <div className="flex items-center gap-3">
+              <BrandLogo className="h-10 w-10" />
+              <div>
+                <h2 className="text-lg font-bold text-white leading-none">Highshift Arcade</h2>
+                <p className="text-xs text-indigo-400 mt-1">Score: {score}</p>
+              </div>
            </div>
            <button onClick={onRestart} className="text-sm text-gray-400 hover:text-white transition">Back to Services</button>
         </header>
