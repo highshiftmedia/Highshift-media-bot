@@ -40,7 +40,7 @@ export const BrandLogo = ({ className = "h-32 w-32" }: { className?: string }) =
   </svg>
 );
 
-// ===== ICONS =====
+// Service Icons
 const ChatbotIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 mb-4 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -130,32 +130,17 @@ export const WhatsAppIcon = () => (
 
 export const SERVICES: Service[] = [
   {
-    id: 'industry_agents',
-    name: 'Industry AI Agents',
-    description: 'Pre-built AI agents for Restaurants, Clinics, Salons, Car Dealerships, and Construction companies.',
-    icon: <IndustryAgentsIcon />,
-    category: 'industry',
-  },
-  {
-    id: 'marketing_hub',
-    name: 'Marketing & Automation Hub',
-    description: 'Content creation, social media automation, email marketing, and lead generation tools.',
-    icon: <MarketingHubIcon />,
-    category: 'marketing',
-  },
-  {
-    id: 'whatsapp_bot',
-    name: 'WhatsApp Business Bot',
-    description: 'AI-powered WhatsApp bot for customer support, lead qualification, bookings, and follow-ups.',
-    icon: <WhatsAppIcon />,
-    category: 'communication',
-  },
-  {
     id: 'chatbot',
     name: 'AI Chatbot Development',
     description: 'Engage customers 24/7 with intelligent, conversational AI chatbots tailored to your business needs.',
-    icon: <ChatbotIcon />,
-    category: 'automation',
+    icon: <ChatbotIcon />
+  },
+  {
+    id: 'external_website',
+    name: 'Create Your Website',
+    description: 'Access our high-performance Instant AI Website Builder to launch your brand globally.',
+    icon: <WebsiteIcon />,
+    externalUrl: 'https://megan-ai-theta.vercel.app/'
   },
   {
     id: 'website_creation',
@@ -167,58 +152,52 @@ export const SERVICES: Service[] = [
     id: 'content',
     name: 'AI-Powered Content Creation',
     description: 'Generate high-quality blog posts, marketing copy, and social media content at scale with AI.',
-    icon: <ContentIcon />,
-    category: 'marketing',
+    icon: <ContentIcon />
   },
   {
     id: 'automation',
     name: 'AI Business Automation',
     description: 'Streamline your workflows, automate repetitive tasks, and increase efficiency with custom AI solutions.',
-    icon: <AutomationIcon />,
-    category: 'automation',
+    icon: <AutomationIcon />
   },
   {
     id: 'model',
     name: 'Custom AI Model Training',
     description: 'Develop and train bespoke AI models on your data to solve unique business challenges.',
-    icon: <ModelIcon />,
-    category: 'automation',
+    icon: <ModelIcon />
   },
   {
     id: 'business_plan',
     name: 'AI Business Plan Generator',
     description: 'Answer a few questions to generate a comprehensive business plan, including market and competitor analysis.',
-    icon: <BusinessIcon />,
-    category: 'other',
+    icon: <BusinessIcon />
   },
   {
     id: 'voice_agent',
     name: 'AI Voice Agent',
     description: 'Experience a live, voice-based conversation with our advanced AI assistant. Perfect for interactive demos.',
-    icon: <VoiceIcon />,
-    category: 'communication',
+    icon: <VoiceIcon />
   },
   {
     id: 'snake',
     name: 'Just for Fun: Snake',
     description: 'Take a break and play a classic game of Snake. A small demo of interactive development.',
-    icon: <GameIcon />,
-    category: 'other',
+    icon: <GameIcon />
   },
 ];
 
 const GENERAL_QUESTIONS: Question[] = [
   {
     text: "First, could you describe your business or industry? This helps us understand your unique landscape.",
-    options: ["E-commerce", "SaaS / Technology", "Healthcare", "Finance & Fintech", "Education", "Restaurant/Food", "Automotive", "Construction", "Other"]
+    options: ["E-commerce", "SaaS / Technology", "Healthcare", "Finance & Fintech", "Education", "Other"]
   },
   {
     text: "What specific challenge or opportunity are you hoping to address with AI?",
-    options: ["Improve Customer Support", "Automate Content Creation", "Streamline Business Processes", "Data Analysis & Insights", "Lead Generation & Sales", "Appointment Booking", "Order Management", "Other"]
+    options: ["Improve Customer Support", "Automate Content Creation", "Streamline Business Processes", "Data Analysis & Insights", "Lead Generation & Sales", "Other"]
   },
   {
     text: "What does a successful outcome look like for you?",
-    options: ["Increase Revenue", "Reduce Operational Costs", "Improve Team Efficiency", "Enhance Customer Satisfaction", "Gain a Competitive Edge", "24/7 Availability", "Other"]
+    options: ["Increase Revenue", "Reduce Operational Costs", "Improve Team Efficiency", "Enhance Customer Satisfaction", "Gain a Competitive Edge", "Other"]
   },
   {
     text: "What's your current experience level with AI solutions?",
