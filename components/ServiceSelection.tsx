@@ -7,21 +7,50 @@ interface ServiceSelectionProps {
   onSelect: (service: Service) => void;
 }
 
-const ServiceCard: React.FC<{ service: Service; onClick: () => void }> = ({ service, onClick }) => (
-  <button
-    onClick={onClick}
-    className="glass-card p-6 rounded-2xl text-left w-full h-full flex flex-col group overflow-hidden relative"
-  >
-    <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-    <div className="relative z-10">
-      <div className="mb-4 transform group-hover:scale-110 transition-transform duration-300">
-        {service.icon}
+const ServiceCard: React.FC<{ service: Service; onClick: () => void }> = ({ service, onClick }) => {
+  const content = (
+    <>
+      <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+      <div className="relative z-10 h-full flex flex-col">
+        <div className="mb-4 transform group-hover:scale-110 transition-transform duration-300">
+          {service.icon}
+        </div>
+        <h3 className="font-bold text-lg text-white mb-2">{service.name}</h3>
+        <p className="text-gray-400 text-sm leading-relaxed flex-grow">{service.description}</p>
+        {service.externalUrl && (
+          <div className="mt-4 flex items-center gap-2 text-sky-400 text-[10px] font-black uppercase tracking-[0.2em] group-hover:gap-3 transition-all duration-300">
+            Open Builder
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </div>
+        )}
       </div>
-      <h3 className="font-bold text-lg text-white mb-2">{service.name}</h3>
-      <p className="text-gray-400 text-sm leading-relaxed">{service.description}</p>
-    </div>
-  </button>
-);
+    </>
+  );
+
+  if (service.externalUrl) {
+    return (
+      <a
+        href={service.externalUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="glass-card p-6 rounded-2xl text-left w-full h-full flex flex-col group overflow-hidden relative block no-underline"
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <button
+      onClick={onClick}
+      className="glass-card p-6 rounded-2xl text-left w-full h-full flex flex-col group overflow-hidden relative"
+    >
+      {content}
+    </button>
+  );
+};
 
 const SocialLink: React.FC<{ href: string; icon: React.ReactNode; label: string }> = ({ href, icon, label }) => (
   <a 
@@ -70,7 +99,7 @@ export const ServiceSelection: React.FC<ServiceSelectionProps> = ({ onSelect }) 
         {SERVICES.map((service) => (
             <div 
               key={service.id} 
-              className={`${service.id === 'snake' || service.id === 'voice_agent' ? 'xl:col-span-2' : ''} h-full`}
+              className={`${service.id === 'snake' || service.id === 'voice_agent' || service.id === 'external_website' ? 'xl:col-span-2' : ''} h-full`}
             >
                 <ServiceCard service={service} onClick={() => onSelect(service)} />
             </div>
