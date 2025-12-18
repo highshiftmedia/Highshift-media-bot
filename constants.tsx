@@ -52,6 +52,12 @@ const AutomationIcon = () => (
   </svg>
 );
 
+const WebsiteIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 mb-4 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+  </svg>
+);
+
 const ModelIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 mb-4 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16v4m-2-2h4m5 10v4m-2-2h4M5 3a2 2 0 00-2 2v1.5a2.5 2.5 0 005 0V5a2 2 0 00-2-2zm14 0a2 2 0 00-2 2v1.5a2.5 2.5 0 005 0V5a2 2 0 00-2-2zM5 17a2 2 0 00-2 2v1.5a2.5 2.5 0 005 0V19a2 2 0 00-2-2zm14 0a2 2 0 00-2 2v1.5a2.5 2.5 0 005 0V19a2 2 0 00-2-2z" />
@@ -77,117 +83,43 @@ const VoiceIcon = () => (
     </svg>
 );
 
-// Industry Icons
-export const RestaurantIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 mb-4 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+// Social Media Icons
+export const TikTokIcon = () => (
+  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.6-4.13-1.47-1.26-.88-2.22-2.19-2.68-3.6-.03 3.14-.04 6.28-.04 9.42 0 1.05-.1 2.13-.42 3.13-.36 1.25-1.14 2.39-2.21 3.12-1.27.87-2.88 1.29-4.41 1.14-1.63-.16-3.18-.94-4.22-2.21-1.16-1.41-1.63-3.27-1.32-5.07.28-1.57 1.16-3.03 2.47-3.95 1.48-1.04 3.4-1.44 5.19-1.07.02 1.48.01 2.97.02 4.45-.63-.2-1.31-.22-1.95-.08-.63.14-1.21.5-1.61 1.02-.4.5-.62 1.14-.61 1.78.01.63.22 1.26.59 1.77.38.52.95.89 1.57 1.04.65.17 1.36.14 1.99-.07.69-.22 1.29-.68 1.67-1.3.36-.6.49-1.3.48-2.01-.01-4.76-.01-9.51-.01-14.27z"/>
   </svg>
 );
 
-export const ClinicIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 mb-4 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+export const FacebookIcon = () => (
+  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
   </svg>
 );
 
-export const SalonIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 mb-4 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+export const InstagramIcon = () => (
+  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.332 3.608 1.308.975.975 1.245 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.332 2.633-1.308 3.608-.975.975-2.242 1.245-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.332-3.608-1.308-.975-.975-1.245-2.242-1.308-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.332-2.633 1.308-3.608.975-.975 2.242-1.245 3.608-1.308 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.337 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
   </svg>
 );
 
-export const DealershipIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 mb-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+export const YoutubeIcon = () => (
+  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 4-8 4z"/>
   </svg>
 );
 
-export const ConstructionIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 mb-4 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+export const XIcon = () => (
+  <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932L18.901 1.153zM17.61 20.644h2.039L6.486 3.24H4.298l13.312 17.404z"/>
   </svg>
 );
 
 export const WhatsAppIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 mb-4 text-green-400" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
   </svg>
 );
 
-export const EmailIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 mb-4 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-  </svg>
-);
-
-export const SocialMediaIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 mb-4 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" />
-  </svg>
-);
-
-export const IndustryAgentsIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 mb-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
-  </svg>
-);
-
-export const MarketingHubIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 mb-4 text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 110-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 01-1.44-4.282m3.102.069a18.03 18.03 0 01-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 018.835 2.535M10.34 6.66a23.847 23.847 0 008.835-2.535m0 0A23.74 23.74 0 0018.795 3m.38 1.125a23.91 23.91 0 011.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 001.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 010 3.46" />
-  </svg>
-);
-
-// ===== INDUSTRY AGENTS =====
-export const INDUSTRY_AGENTS: IndustryAgent[] = [
-  {
-    id: 'restaurant',
-    name: 'Restaurant AI Agent',
-    industry: 'Food & Beverage',
-    description: 'Handle orders via voice, WhatsApp, or chat. Integrate with POS systems, manage menus, promotions, and order tracking.',
-    icon: <RestaurantIcon />,
-    features: ['Voice/Chat Ordering', 'POS Integration', 'Menu Management', 'Order Tracking', 'Promotions'],
-    demoAvailable: true,
-  },
-  {
-    id: 'clinic',
-    name: 'Healthcare AI Agent',
-    industry: 'Healthcare',
-    description: 'Book appointments, check doctor availability, sync with calendars, send reminders, and provide pre-visit instructions.',
-    icon: <ClinicIcon />,
-    features: ['Appointment Booking', 'Calendar Sync', 'Automated Reminders', 'Rescheduling', 'Pre-visit Info'],
-    demoAvailable: true,
-  },
-  {
-    id: 'salon',
-    name: 'Salon & Spa AI Agent',
-    industry: 'Beauty & Wellness',
-    description: 'Reserve appointments, manage stylist availability, send reminders to reduce no-shows.',
-    icon: <SalonIcon />,
-    features: ['Service Booking', 'Stylist Scheduling', 'Automated Reminders', 'Customer Preferences', 'Reviews'],
-    demoAvailable: true,
-  },
-  {
-    id: 'dealership',
-    name: 'Auto Dealership AI Agent',
-    industry: 'Automotive',
-    description: 'Answer vehicle queries, schedule test drives, connect to inventory databases and FAQs using RAG.',
-    icon: <DealershipIcon />,
-    features: ['Vehicle Inquiries', 'Test Drive Booking', 'Inventory Search', 'RAG-Based FAQ', 'Lead Capture'],
-    demoAvailable: true,
-  },
-  {
-    id: 'construction',
-    name: 'Construction AI Agent',
-    industry: 'Construction',
-    description: 'Automate scheduling, safety monitoring, estimating, progress tracking, and reporting.',
-    icon: <ConstructionIcon />,
-    features: ['Project Scheduling', 'Safety Monitoring', 'Cost Estimation', 'Progress Tracking', 'Reporting'],
-    demoAvailable: true,
-  },
-];
-
-// ===== MAIN SERVICES =====
 export const SERVICES: Service[] = [
   {
     id: 'industry_agents',
@@ -216,6 +148,12 @@ export const SERVICES: Service[] = [
     description: 'Engage customers 24/7 with intelligent, conversational AI chatbots tailored to your business needs.',
     icon: <ChatbotIcon />,
     category: 'automation',
+  },
+  {
+    id: 'website_creation',
+    name: 'Highshift Website Design',
+    description: 'Transform your brand with a high-performance, AI-optimized website built for the modern era.',
+    icon: <WebsiteIcon />
   },
   {
     id: 'content',
@@ -284,33 +222,39 @@ const GENERAL_QUESTIONS: Question[] = [
   }
 ];
 
+const WEBSITE_QUESTIONS: Question[] = [
+  {
+    text: "Let's build your presence. What is your brand name?",
+    options: []
+  },
+  {
+    text: "What is your specific niche or industry?",
+    options: []
+  },
+  {
+    text: "Which color palette fits your brand best?",
+    options: [
+        "Midnight: Navy Blue, Electric Cyan, Slate Grey",
+        "Creative: Deep Purple, Vivid Magenta, Gold",
+        "Nature: Forest Green, Emerald, Warm Sand"
+    ]
+  },
+  {
+    text: "Do you have any specific color suggestions or hex codes in mind?",
+    options: []
+  },
+  {
+    text: "What is the primary goal of your website? (e.g., Sell products, Professional Portfolio, Informational Blog)",
+    options: ["E-commerce", "Portfolio", "Landing Page", "Lead Generation", "Corporate Site"]
+  }
+];
+
 export const QUESTIONS: Record<string, Question[]> = {
   chatbot: GENERAL_QUESTIONS,
   content: GENERAL_QUESTIONS,
   automation: GENERAL_QUESTIONS,
   model: GENERAL_QUESTIONS,
-  whatsapp_bot: [
-    {
-      text: "What type of business do you operate?",
-      options: ["E-commerce", "Service Business", "Restaurant/Food", "Healthcare", "Real Estate", "Other"]
-    },
-    {
-      text: "What's the primary use case for your WhatsApp bot?",
-      options: ["Customer Support", "Lead Qualification", "Order Taking", "Appointment Booking", "FAQ Automation", "All of the above"]
-    },
-    {
-      text: "How many customer messages do you typically receive per day?",
-      options: ["Less than 50", "50-200", "200-500", "500-1000", "1000+"]
-    },
-    {
-      text: "Do you need integration with other systems?",
-      options: ["CRM Integration", "E-commerce Platform", "Calendar/Booking System", "Payment Gateway", "Multiple Integrations", "Not sure yet"]
-    },
-    {
-      text: "What's your timeline for implementation?",
-      options: ["ASAP - Within 2 weeks", "1-2 months", "3-6 months", "Just exploring options"]
-    }
-  ],
+  website_creation: WEBSITE_QUESTIONS,
 };
 
 export const BUSINESS_PLAN_QUESTIONS: string[] = [
