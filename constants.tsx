@@ -3,6 +3,11 @@ import React from 'react';
 import type { Service, Question } from './types';
 import { IndustryAgentsIcon } from './components/icons/IndustryAgentsIcon';
 import { MarketingHubIcon } from './components/icons/MarketingHubIcon';
+import { ClinicIcon, ConstructionIcon, DealershipIcon, RestaurantIcon, SalonIcon } from './components/icons/AgentIcons';
+import { EmailIcon, SocialMediaIcon } from './components/icons/MarketingIcons';
+import type { IndustryAgent } from './types';
+
+export { IndustryAgentsIcon, MarketingHubIcon, ClinicIcon, ConstructionIcon, DealershipIcon, RestaurantIcon, SalonIcon, EmailIcon, SocialMediaIcon };
 
 
 export const BrandLogo = ({ className = "h-32 w-32" }: { className?: string }) => (
@@ -324,4 +329,52 @@ export const DEALERSHIP_VEHICLES = [
   { id: 'v3', make: 'Ford', model: 'F-150', year: 2024, price: 45000, type: 'Truck', available: true },
   { id: 'v4', make: 'Tesla', model: 'Model 3', year: 2024, price: 42000, type: 'Electric', available: false },
   { id: 'v5', make: 'BMW', model: 'X5', year: 2024, price: 65000, type: 'Luxury SUV', available: true },
+];
+
+export const INDUSTRY_AGENTS: IndustryAgent[] = [
+  {
+    id: 'clinic',
+    name: 'Clinic Agent',
+    industry: 'Healthcare',
+    description: 'Automated patient scheduling, triage, and FAQs for medical clinics.',
+    icon: <ClinicIcon />,
+    features: ['Appointment Booking', 'Symptom Triage', 'Patient FAQs', 'Prescription Refills'],
+    demoAvailable: true
+  },
+  {
+    id: 'construction',
+    name: 'Construction Agent',
+    industry: 'Construction',
+    description: 'Project management, safety compliance, and resource allocation assistant.',
+    icon: <ConstructionIcon />,
+    features: ['Project Tracking', 'Safety Checklists', 'Resource Management', 'Daily Reports'],
+    demoAvailable: true
+  },
+  {
+    id: 'dealership',
+    name: 'Dealership Agent',
+    industry: 'Automotive',
+    description: 'Vehicle inventory, test drive scheduling, and service appointments.',
+    icon: <DealershipIcon />,
+    features: ['Inventory Search', 'Test Drive Booking', 'Service Scheduling', 'Financing Calc'],
+    demoAvailable: true
+  },
+  {
+    id: 'restaurant',
+    name: 'Restaurant Agent',
+    industry: 'Hospitality',
+    description: 'Table reservations, menu inquiries, and order management.',
+    icon: <RestaurantIcon />,
+    features: ['Table Reservations', 'Menu Q&A', 'Order Taking', 'Event Booking'],
+    demoAvailable: true
+  },
+  {
+    id: 'salon',
+    name: 'Salon Agent',
+    industry: 'Beauty & Wellness',
+    description: 'Appointment booking, stylist selection, and service consultations.',
+    icon: <SalonIcon />,
+    features: ['Appointment Booking', 'Stylist Selection', 'Service Menu', 'Reminders'],
+    demoAvailable: true
+  }
 ];
