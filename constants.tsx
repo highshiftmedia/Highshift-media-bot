@@ -130,59 +130,89 @@ export const WhatsAppIcon = () => (
 
 export const SERVICES: Service[] = [
   {
+    id: 'industry_agents',
+    name: 'Industry AI Agents',
+    description: 'Pre-built AI agents for Restaurants, Clinics, Salons, Car Dealerships, and Construction companies.',
+    icon: <IndustryAgentsIcon />,
+    category: 'industry',
+  },
+  {
+    id: 'marketing_hub',
+    name: 'Marketing & Automation Hub',
+    description: 'Content creation, social media automation, email marketing, and lead generation tools.',
+    icon: <MarketingHubIcon />,
+    category: 'marketing',
+  },
+  {
+    id: 'whatsapp_bot',
+    name: 'WhatsApp Business Bot',
+    description: 'AI-powered WhatsApp bot for customer support, lead qualification, bookings, and follow-ups.',
+    icon: <WhatsAppIcon />,
+    category: 'communication',
+  },
+  {
     id: 'chatbot',
     name: 'AI Chatbot Development',
     description: 'Engage customers 24/7 with intelligent, conversational AI chatbots tailored to your business needs.',
-    icon: <ChatbotIcon />
+    icon: <ChatbotIcon />,
+    category: 'automation',
   },
   {
     id: 'external_website',
     name: 'Create Your Website',
     description: 'Access our high-performance Instant AI Website Builder to launch your brand globally.',
     icon: <WebsiteIcon />,
-    externalUrl: 'https://megan-ai-theta.vercel.app/'
+    externalUrl: 'https://megan-ai-theta.vercel.app/',
+    category: 'other',
   },
   {
     id: 'website_creation',
     name: 'Highshift Website Design',
     description: 'Transform your brand with a high-performance, AI-optimized website built for the modern era.',
-    icon: <WebsiteIcon />
+    icon: <WebsiteIcon />,
+    category: 'other',
   },
   {
     id: 'content',
     name: 'AI-Powered Content Creation',
     description: 'Generate high-quality blog posts, marketing copy, and social media content at scale with AI.',
-    icon: <ContentIcon />
+    icon: <ContentIcon />,
+    category: 'marketing',
   },
   {
     id: 'automation',
     name: 'AI Business Automation',
     description: 'Streamline your workflows, automate repetitive tasks, and increase efficiency with custom AI solutions.',
-    icon: <AutomationIcon />
+    icon: <AutomationIcon />,
+    category: 'automation',
   },
   {
     id: 'model',
     name: 'Custom AI Model Training',
     description: 'Develop and train bespoke AI models on your data to solve unique business challenges.',
-    icon: <ModelIcon />
+    icon: <ModelIcon />,
+    category: 'automation',
   },
   {
     id: 'business_plan',
     name: 'AI Business Plan Generator',
     description: 'Answer a few questions to generate a comprehensive business plan, including market and competitor analysis.',
-    icon: <BusinessIcon />
+    icon: <BusinessIcon />,
+    category: 'other',
   },
   {
     id: 'voice_agent',
     name: 'AI Voice Agent',
     description: 'Experience a live, voice-based conversation with our advanced AI assistant. Perfect for interactive demos.',
-    icon: <VoiceIcon />
+    icon: <VoiceIcon />,
+    category: 'communication',
   },
   {
     id: 'snake',
     name: 'Just for Fun: Snake',
     description: 'Take a break and play a classic game of Snake. A small demo of interactive development.',
-    icon: <GameIcon />
+    icon: <GameIcon />,
+    category: 'other',
   },
 ];
 
@@ -242,6 +272,24 @@ export const QUESTIONS: Record<string, Question[]> = {
   automation: GENERAL_QUESTIONS,
   model: GENERAL_QUESTIONS,
   website_creation: WEBSITE_QUESTIONS,
+  whatsapp_bot: [
+    {
+      text: "What type of business do you operate?",
+      options: ["E-commerce", "Service Business", "Restaurant/Food", "Healthcare", "Real Estate", "Other"]
+    },
+    {
+      text: "What's the primary use case for your WhatsApp bot?",
+      options: ["Customer Support", "Lead Qualification", "Order Taking", "Appointment Booking", "FAQ Automation", "All of the above"]
+    },
+    {
+      text: "Do you need integration with existing systems (CRM, POS, etc.)?",
+      options: ["Yes, CRM", "Yes, POS", "Yes, Booking System", "No, standalone is fine", "Not sure yet"]
+    },
+    {
+      text: "What is your estimated monthly message volume?",
+      options: ["< 1,000", "1,000 - 10,000", "10,000 - 50,000", "50,000+", "Not sure"]
+    }
+  ],
 };
 
 export const BUSINESS_PLAN_QUESTIONS: string[] = [
